@@ -1,0 +1,22 @@
+{{extend './common/layout.html'}}
+
+{{block 'main'}}
+<div id="errbox">
+  <h1 class="err">出错啦！！！</h1>
+  <h4 class="err-tip"><b>{{message}}</b></h4>
+  <div class="timer"></div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script>
+  let i = 3;
+  setInterval(() => {
+    console.log(i);
+    $('.timer').html(--i + 's后跳转到登录页')
+  }, 1000)
+  setTimeout(() => {
+    location.href = '/admin/login'
+  }, 3000)
+</script>
+{{/block}}
